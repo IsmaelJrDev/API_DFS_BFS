@@ -91,9 +91,13 @@
             const goal = document.getElementById("goal").value.split(',').map(Number);
             const method = document.getElementById("method").value;
             
-            fetch("http://0.0.0.0:5000/solve", {
+            const serverUrl = "https://api-dfs-bfs.onrender.com"; 
+
+            fetch(serverUrl, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({ start, goal, method })
             })
             .then(response => response.json())
