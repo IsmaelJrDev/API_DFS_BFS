@@ -91,7 +91,7 @@
             const goal = document.getElementById("goal").value.split(',').map(Number);
             const method = document.getElementById("method").value;
             
-            fetch("http://127.0.0.1:5000/solve", {
+            fetch("http://0.0.0.0:5000/solve", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ start, goal, method })
